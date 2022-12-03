@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/navbar.css">
+<div class="navbar">
+    <div class="logo">
+        <div class="icon"></div>
+        OINK!
+    </div>
+    <div class="links">
+        <ul>
+            <li class="active"><a href="/home">home</a></li>
+            <li><a href="/#info">info</a></li>
+            <li><a href="/#menu">menu</a></li>
+            <li><a href="/#gallery">gallery</a></li>
+            <li><a href="/cart"><%= cartLength %>&nbsp;&nbsp;<i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+    </div>
+    <div class="order">
+        <div class="dropdown">Order</div>
+        <div class="sub-menu">
+            <ul>
+                <% orderNavbar.forEach(element => { %>
+                    <li><a href="/place/<%= element %>"><%= element %></a></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</div>

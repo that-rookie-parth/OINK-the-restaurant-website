@@ -1,0 +1,7 @@
+{
+    "hostname": "localhost",
+    "port": 5099,
+    "view engine": "ejs",
+    "static": "public",
+    "views": "./json"
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/35e51e9ea6.js" crossorigin="anonymous"></script>
+    <script defer src="/js/cart.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('../views/partials/navbar') %>
+    <%= imageText = "CART" %>
+    <%= imageUrl = "https://" %>
+    <%- include('../views/partials/imageWithText') %>
+    
+    <div class="foodMenu" id="menu">
+        <h1>Cart</h1>
+        <div class="foodMenuName">Your cart as of now</div>
+        <div class="sub">
+            <div class="foodMenuList">
+                <ul>
+                    <% foods.forEach(food => { %>
+                     <li>
+                        <div class="foodName"><%= food.foodName %></div>
+                        <div class="foodPrice">&#8377;<%= food.price %></div>
+                     </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+        <a href="/emptyCart">Order Now.</a>
+    </div>
+    
+    <%- include('../views/partials/footer') %> 
+</body>
+
+</html>

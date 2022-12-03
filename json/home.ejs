@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/35e51e9ea6.js" crossorigin="anonymous"></script>
+    <script defer src="/js/home.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('../views/partials/navbar') %>
+    <%- include('../views/partials/imageWithText') %>
+    
+    <div class="foodMenu" id="menu">
+        <h1>Menu</h1>
+        <div class="foodMenuName">Dhaba</div>
+        <div class="sub">
+            <div class="foodMenuList">
+                <ul>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                    <li>
+                        <div class="foodName">Maggi</div>
+                        <div class="foodPrice">120</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="foodMenuToChooseFrom">
+                <ul>
+                    <% orderNavbar.forEach(element => { %>
+                        <li><a href="#menu"><%= element %></a></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <% infoHeight = 470 * info.length + 400 %>
+    <div class="info" id="info" style="--heightSize: <%= infoHeight%>px">
+        <h1>INFO</h1>
+        <% info.forEach(curr => { %>
+            <div class="item">
+                <div class="image">
+                    <img src="<%= curr[0]%>" alt="">
+                </div>
+                <div class="text"><%= curr[1]%></div>
+            </div>
+        <% }) %>
+    </div>
+
+
+    <div class="gallery" id="gallery">
+        <div class="bgImage"></div>
+        <h1>gallery</h1>
+        <div class="catalog">
+            <% foods.forEach(element => { %>
+            <div class="image">
+                <img src="<%= element%>" alt="">
+            </div>
+            <% }) %>
+        </div>
+    </div>
+
+
+
+
+    <%- include('../views/partials/footer') %> 
+</body>
+
+</html>

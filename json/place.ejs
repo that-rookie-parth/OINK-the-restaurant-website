@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/place.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <script defer src="/js/place.js" />
+    <script src="https://kit.fontawesome.com/35e51e9ea6.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+    <% imageUrl = place.placePic %>
+    <% imageText = place.placeName %>
+    <%- include('partials/imageWithText') %>
+
+    <div class="menu">
+        <h1>Order from <%= place.placeName%></h1>
+        <div class="catalog">
+            <% foods.forEach(food => { %>
+                <div class="item" style="--bg: url(<%= food.foodPic %>)">
+                    <div class="info">
+                        <div class="top">
+                            <div class="foodName"><%= food.foodName %></div>
+                            <div class="foodPrice">&#8377;<%= food.price %></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="foodId"><%= food._id%></div>
+                            <div class="desc"><%= food.foodDesc %></div>
+                            <a href="#">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+
+</html>
